@@ -1,0 +1,114 @@
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--dark);
+}
+
+#hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--cream);
+  width: 90%;
+  max-width: 700px;
+}
+
+.hero-text h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+#intro {
+  max-width: 850px;
+  margin: 5rem auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+  line-height: 1.9;
+}
+
+#intro h3 {
+  color: var(--gold);
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+#intro p {
+  font-size: 1rem;
+  color: var(--accent);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+.quote {
+  text-align: center;
+  font-style: italic;
+  color: var(--gold);
+  margin: 3rem auto 4rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px;
+  width: 80%;
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid rgba(240,210,138,0.2);
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: #0a0f18;
+}
+
+footer .project-context {
+  font-style: italic;
+  color: rgba(233,228,213,0.8);
+  max-width: 800px;
+  margin: 0.5rem auto 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 80vh;
+  }
+
+  .hero-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  #intro {
+    margin: 3rem auto;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+}
