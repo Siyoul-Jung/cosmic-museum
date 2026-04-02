@@ -1,0 +1,31 @@
+
+services:
+  app:
+    build: .
+    container_name: cosmic_app
+    ports:
+      - "9090:8080"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_NAME=cosmic_museum
+      - DB_USER=root
+      - DB_PASS=${DB_PASS:-} # Recommended: Set this in your local .env
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:latest
+    container_name: cosmic_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASS:-}
+      - MYSQL_DATABASE=cosmic_museum
+    volumes:
+      - ./database_setup.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./populate_exhibits.sql:/docker-entrypoint-initdb.d/2.sql
+      - ./populate_timeline.sql:/docker-entrypoint-initdb.d/3.sql
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

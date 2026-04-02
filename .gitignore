@@ -1,0 +1,24 @@
+# .gitignore for Cosmic Museum
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PHP/Web server files
+*.tmp
+sess_*
+error_log
+
+# OS-specific files
+.idea/
+.vscode/
+*.swp
+
+# Infrastructure
+.env
+db_data/
+includes/db_env.php
+includes/db_bridge.php
+test_db_connection.php
+test_connection.php
+.env

@@ -1,71 +1,82 @@
-# 🌌 Cosmic Museum  
-*A digital exhibition exploring humanity’s relationship with the stars.*
+# 🌌 Cosmic Museum
+
+**Cosmic Museum** is an interactive digital museum exploring the profound relationship between humanity and the stars. Developed as a final project for **El Camino College - CS12 Web Programming**, this platform bridges the gap between historical celestial discovery and modern space exploration.
 
 ---
 
-## 🪐 Overview  
-**Cosmic Museum** is a web-based anthropology and astronomy project that explores how humans across cultures have looked to the sky for meaning, ritual, and order.  
-Developed as part of **CS12 – Web Programming**, this project represents **Phase 1: Web Design and Prototyping**, building the foundation for a dynamic, interactive museum site.
+## 🚀 Quick Start (Docker Environment)
+
+The project is now fully containerized using Docker for instant, consistent deployment across any system.
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+
+### Launching the Museum
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Siyoul-Jung/cosmic-museum.git
+    cd cosmic-museum
+    ```
+2.  **Start the environment**:
+    ```bash
+    docker-compose up -d
+    ```
+3.  **Explore**:
+    Open your browser and navigate to **[http://localhost:8080](http://localhost:8080)**.
 
 ---
 
-## 🧭 Site Structure  
+## ✨ Features
 
-| Page | Description |
-|------|--------------|
-| `index.html` | **Home** – Introduction to the human gaze toward the heavens |
-| `timeline.html` | **Cosmic Order** – How humanity created calendars and cosmic systems |
-| `architecture.html` | **Celestial Monuments** – Monuments aligned with stars across civilizations |
-| `reflection.html` | **Reflection** – Modern interpretations and closing thoughts |
-| `memory.html` | **Memory Wall** – Interactive user wall for reflections and thoughts |
+### 🛠️ Phase 2: Dynamic Core (Current)
+-   **Dynamic Content Engine**: Timeline and Architecture exhibits are dynamically populated from a **MariaDB** database via **PHP (PDO)**.
+-   **User Authentication**: Integrated registration and login system for visitors.
+-   **Administrative Dashboard**: Exclusive access for admins to manage (Add/Update/Delete) museum exhibits.
+-   **Interactive Memory Wall**: A digital space where community reflections are stored and displayed in real-time.
 
----
-
-## 🎨 Design  
-- **Theme:** Night-sky aesthetic — dark background with gold typography  
-- **Typography:** `Cinzel Decorative` (titles), `Lora` (body text)  
-- **Layout:** CSS Grid and Flexbox for responsive card layouts  
-- **Color Palette:**  
-  - `--dark: #0e1420`  
-  - `--gold: #f0d28a`  
-  - `--accent: #e9e4d5`  
-  - `--cream: #f5f5f5`
-
-All imagery is sourced from open-access cultural archives such as **Smithsonian**, **NASA**, and **Wikimedia Commons**, ensuring cultural and historical accuracy.
+### 📜 Phase 1: Interactive Foundation
+-   **Responsive Design**: Modern, glassmorphic UI that adapts to any screen size.
+-   **Visual Timelines**: Historical journey through space exploration milestones.
+-   **Architectural Gallery**: Showcasing celestial-inspired structures from ancient monuments to modern observatories.
 
 ---
 
-## ⚙️ Technologies  
-- **HTML5** – semantic page structure  
-- **CSS3** – modular design system (`base.css` + page-specific styles)  
-- **JavaScript** – used for interactivity (`localStorage` on Memory Wall)  
-- **Responsive Design** – optimized for desktop and mobile layouts  
+## 🏗️ Project Structure
+
+- `Dockerfile`: Configuration for the PHP 8.2-apache environment.
+- `docker-compose.yml`: Multi-container orchestration (App + DB).
+- `includes/db_connect.php`: Secure database connectivity using the Docker internal network.
+- `database_setup.sql`: Core schema initialization.
+- `admin.php` & `add_exhibit.php`: Administrative management interfaces.
+- `css/` & `js/`: Premium styling and interactive logic.
 
 ---
 
-## 🧩 Phase 1 Summary  
-This phase focuses on:
-- Defining the project theme (Anthropology of the Sky)  
-- Designing a consistent layout system across five pages  
-- Creating a working **prototype** with minimal interactivity  
-- Preparing for Phase 2: adding dynamic and data-driven behavior  
+## 🛠️ Technology Stack
+
+-   **Frontend**: HTML5, CSS3 (Custom Modules), JavaScript
+-   **Backend**: PHP 8.2
+-   **Database**: MariaDB (MySQL Compatible)
+-   **Infrastructure**: Docker, Docker Compose
 
 ---
 
-## 🚀 Phase 2 Goals  
-| Category | Feature | Description |
-|-----------|----------|-------------|
-| **Interactivity** | Dynamic Timeline | Animated scroll-based cosmic timeline using JavaScript |
-| **User Input** | Memory Wall 2.0 | Add edit/delete functionality and timestamp tracking |
-| **Cultural Expansion** | New Sections | Polynesian navigation and Aboriginal sky stories |
-| **Media Enhancement** | Gallery Modal | Lightbox image viewer for cultural artifacts |
-| **Immersion** | Ambient Audio | Optional cosmic soundscape and subtle motion effects |
+## 🎓 Academic Context
+
+-   **Author**: Woongbin
+-   **Institution**: El Camino College
+-   **Course**: CS12 Web Programming
+-   **Project Phase**: Phase 2 (Infrastructure & Dynamic Content)
 
 ---
 
-## 🧑‍💻 Author  
-**Woongbin**  
-> El Camino College – CS12 Web Programming  
-> 2025 | Designed and Developed for the *Cosmic Museum* Project
+## 🏛️ Legacy Setup (Manual)
 
-© 2025 *Cosmic Museum* | Designed by Woongbin
+<details>
+<summary>View Manual Installation Steps (XAMPP/phpMyAdmin)</summary>
+
+1.  Create a database named `cosmic_museum` in phpMyAdmin.
+2.  Import `database_setup.sql`, `populate_exhibits.sql`, and `populate_timeline.sql`.
+3.  Modify `includes/db_connect.php` to match your local PHP environment (host: `localhost`).
+4.  Open the project through your local web server (e.g., `http://localhost/cosmic-museum`).
+</details>
